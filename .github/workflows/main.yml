@@ -16,6 +16,7 @@ jobs:
       - name: Echo java version
         uses: reactivecircus/android-emulator-runner@v2
         with:
+          api-level: 29
           script: java --version
 
       - name: checkout
