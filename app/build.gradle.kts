@@ -18,8 +18,19 @@ android {
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android.txt"),
+                "proguard-rules.pro",
+            )
         }
+    }
+
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.0.5"
     }
 
     compileOptions {
@@ -39,5 +50,18 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
     androidTestImplementation("com.kaspersky.android-components:kaspresso:1.3.0")
+
+    val composeVersion = "1.0.5"
+
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4:$composeVersion")
+
+    debugImplementation("androidx.compose.ui:ui-test-manifest:$composeVersion")
+
+    implementation("androidx.compose.foundation:foundation:$composeVersion")
+    implementation("androidx.compose.animation:animation:$composeVersion")
+    implementation("androidx.compose.compiler:compiler:$composeVersion")
+    implementation("androidx.compose.material:material:$composeVersion")
+    implementation("androidx.compose.runtime:runtime:$composeVersion")
+    implementation("androidx.compose.ui:ui:$composeVersion")
 
 }
