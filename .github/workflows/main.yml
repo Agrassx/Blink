@@ -13,12 +13,6 @@ jobs:
   test:
     runs-on: macos-latest
     steps:
-      - name: Echo java version
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: 29
-          script: java --version
-
       - name: checkout
         uses: actions/checkout@v2
 
