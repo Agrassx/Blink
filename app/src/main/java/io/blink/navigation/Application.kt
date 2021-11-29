@@ -15,7 +15,7 @@ fun Application() {
         startDestination = MainGraph.MainScreen.route
     ) {
         composable(route = MainGraph.MainScreen.route) {
-            MainScreen(navController)
+            MainScreen()
         }
     }
 

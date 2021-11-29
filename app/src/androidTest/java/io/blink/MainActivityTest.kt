@@ -30,4 +30,32 @@ class MainActivityTest {
         }
     }
 
+    @Test
+    fun shouldContainOneLinkWithTitleGoogleInList() {
+        val list = composeTestRule.onNode(
+            hasTestTag("linkList"),
+        )
+
+        list.apply {
+            assertIsDisplayed()
+
+            assert(
+                hasAnyChild(
+                    hasText("Google")
+                )
+            )
+        }
+    }
+
+    @Test
+    fun shouldContainOneLinkWithClickableUrlInList() {
+
+        composeTestRule.onNodeWithTag("linkList-item1")
+            .apply {
+                assertHasClickAction()
+                assertIsDisplayed()
+            }
+    }
+
+
 }
